@@ -4,7 +4,7 @@ namespace App\Utils;
 
 class ValidateNationalNumber
 {
-    private function isValidIranianNationalCode(string $input): bool {
+    private static function isValidIranianNationalCode(string $input): bool {
 
         // کد ملی فرد// natural person
         if (!preg_match("/^\d{10}$/", $input)) {
@@ -18,7 +18,7 @@ class ValidateNationalNumber
 
         return $sum < 2 ? $check == $sum : $check + $sum == 11;
     }
-    private function isValidIranianNationalId($nationalId) {
+    private static function isValidIranianNationalId($nationalId) {
         //شناسه ملی شرکت // legal person
 
         // بررسی طول و ساختار عددی
